@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州西湖 · 人间天堂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body class="index-page">
+
+    <!-- ========== 顶部标题 ========== -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="site-title">杭 州 西 湖</h1>
+            <p class="site-subtitle">— 欲把西湖比西子，淡妆浓抹总相宜 —</p>
+            <p class="site-desc">轻点地图上的<span class="red-text">红色景点名</span>，开启诗画西湖之旅</p>
+        </div>
+    </header>
+
+    <!-- ========== 主体地图区（支持缩放） ========== -->
+    <main class="map-section">
+        <div class="map-viewport" id="mapViewport">
+            <div class="map-zoomable" id="mapZoomable">
+                <img src="./static/images/map.jpg"
+                     alt="西湖景观图" class="map-image" id="mapImage">
+
+                <!-- ===== 西湖十景标记 + 预览卡片 ===== -->
+                
+                <div class="scene-marker"
+                     id="marker-sudi"
+                     style="left: 52%; top: 56%;"
+                     data-scene="sudi">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">苏堤春晓</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card right" id="card-sudi">
+                        <div class="card-arrow right"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E8%8B%8F%E5%A0%A4%E6%98%A5%E6%99%93.jpg"
+                                 alt="苏堤春晓">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">苏堤春晓</h4>
+                            <p class="card-brief">苏堤春晓为西湖十景之首，北宋苏东坡任杭州知州时疏浚西湖所筑长堤，南起南屏山麓，北到栖霞岭下，全长近三公里。…</p>
+                            <a href="./scene_sudi.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-quyuan"
+                     style="left: 73%; top: 41%;"
+                     data-scene="quyuan">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">曲院风荷</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card left" id="card-quyuan">
+                        <div class="card-arrow left"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E6%9B%B2%E9%99%A2%E9%A3%8E%E8%8D%B7.jpg"
+                                 alt="曲院风荷">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">曲院风荷</h4>
+                            <p class="card-brief">曲院风荷以夏日观荷为主题，南宋时此处为酿酒作坊，靠近金沙涧，盛夏荷花连天碧，映日别样红。…</p>
+                            <a href="./scene_quyuan.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-pinghu"
+                     style="left: 72%; top: 75%;"
+                     data-scene="pinghu">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">平湖秋月</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card left" id="card-pinghu">
+                        <div class="card-arrow left"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E5%B9%B3%E6%B9%96%E7%A7%8B%E6%9C%88.jpg"
+                                 alt="平湖秋月">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">平湖秋月</h4>
+                            <p class="card-brief">平湖秋月位于白堤西端、孤山南麓，临湖赏月，水月相映，是西湖赏月最佳之处。…</p>
+                            <a href="./scene_pinghu.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-duanqiao"
+                     style="left: 90%; top: 83%;"
+                     data-scene="duanqiao">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">断桥残雪</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card left" id="card-duanqiao">
+                        <div class="card-arrow left"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E6%96%AD%E6%A1%A5%E6%AE%8B%E9%9B%AA.jpg"
+                                 alt="断桥残雪">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">断桥残雪</h4>
+                            <p class="card-brief">断桥残雪位于白堤东端，每逢雪后初晴，桥面阳面冰消、阴面残雪似断，加上白蛇传的美丽传说，名满天下。…</p>
+                            <a href="./scene_duanqiao.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-liulang"
+                     style="left: 43%; top: 85%;"
+                     data-scene="liulang">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">柳浪闻莺</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card left" id="card-liulang">
+                        <div class="card-arrow left"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E6%9F%B3%E6%B5%AA%E9%97%BB%E8%8E%BA.jpg"
+                                 alt="柳浪闻莺">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">柳浪闻莺</h4>
+                            <p class="card-brief">柳浪闻莺位于西湖东南岸，南宋御花园旧址，园内柳树成荫，春日黄莺啼鸣，清丽婉转。…</p>
+                            <a href="./scene_liulang.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-huagang"
+                     style="left: 22%; top: 54%;"
+                     data-scene="huagang">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">花港观鱼</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card right" id="card-huagang">
+                        <div class="card-arrow right"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E8%8A%B1%E6%B8%AF%E8%A7%82%E9%B1%BC.jpg"
+                                 alt="花港观鱼">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">花港观鱼</h4>
+                            <p class="card-brief">花港观鱼位于苏堤南段西侧，三面临水一面倚山，园中红鱼池内锦鲤戏水，花木扶疏，生趣盎然。…</p>
+                            <a href="./scene_huagang.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-leifeng"
+                     style="left: 26%; top: 70%;"
+                     data-scene="leifeng">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">雷峰夕照</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card right" id="card-leifeng">
+                        <div class="card-arrow right"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E9%9B%B7%E5%B3%B0%E5%A4%95%E7%85%A7.jpg"
+                                 alt="雷峰夕照">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">雷峰夕照</h4>
+                            <p class="card-brief">雷峰夕照位于西湖南岸夕照山上，夕阳西下时塔影横空、金碧辉煌，白蛇传中法海镇压白娘子的故事即发生于此。…</p>
+                            <a href="./scene_leifeng.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-shuangfeng"
+                     style="left: 70%; top: 26%;"
+                     data-scene="shuangfeng">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">双峰插云</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card left" id="card-shuangfeng">
+                        <div class="card-arrow left"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E5%8F%8C%E5%B3%B0%E6%8F%92%E4%BA%91.jpg"
+                                 alt="双峰插云">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">双峰插云</h4>
+                            <p class="card-brief">双峰插云指南高峰与北高峰遥相对峙，每逢云雾天气，两峰时隐时现，宛如玉笋直插云霄。…</p>
+                            <a href="./scene_shuangfeng.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-nanping"
+                     style="left: 16%; top: 72%;"
+                     data-scene="nanping">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">南屏晚钟</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card right" id="card-nanping">
+                        <div class="card-arrow right"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E5%8D%97%E5%B1%8F%E6%99%9A%E9%92%9F.jpg"
+                                 alt="南屏晚钟">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">南屏晚钟</h4>
+                            <p class="card-brief">南屏晚钟在净慈寺中，寺依南屏山而建，每当傍晚钟声响起，经山峦回荡，余音悠远绵长。…</p>
+                            <a href="./scene_nanping.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scene-marker"
+                     id="marker-santan"
+                     style="left: 34%; top: 65%;"
+                     data-scene="santan">
+
+                    <!-- 脉冲动画 -->
+                    <span class="marker-pulse"></span>
+                    <!-- 红色圆点 -->
+                    <span class="marker-dot"></span>
+                    <!-- 悬停标签 -->
+                    <span class="marker-label">三潭印月</span>
+
+                    <!-- 预览卡片 -->
+                    <div class="preview-card right" id="card-santan">
+                        <div class="card-arrow right"></div>
+                        <div class="card-img-wrap">
+                            <img src="./static/images/%E4%B8%89%E6%BD%AD%E5%8D%B0%E6%9C%88.jpg"
+                                 alt="三潭印月">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">三潭印月</h4>
+                            <p class="card-brief">三潭印月位于西湖中的小瀛洲岛，岛南有三座石塔，月夜塔中燃烛，水月交辉，是人民币一元纸币的背面图案。…</p>
+                            <a href="./scene_santan.html"
+                               class="card-link">查看详情 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- 缩放控制按钮 -->
+            <div class="zoom-controls">
+                <button class="zoom-btn" id="zoomIn" title="放大">＋</button>
+                <span class="zoom-level" id="zoomLevel">100%</span>
+                <button class="zoom-btn" id="zoomOut" title="缩小">－</button>
+                <button class="zoom-btn reset" id="zoomReset" title="重置">↺</button>
+            </div>
+
+            <!-- 操作提示 -->
+            <div class="zoom-hint">
+                <span>🖱️ 滚轮缩放 · 拖拽移动</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== 底部十景导航 ========== -->
+    <section class="scenes-nav">
+        <h2 class="section-title">— 西 湖 十 景 —</h2>
+        <div class="scenes-grid">
+            
+            <a href="./scene_sudi.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E8%8B%8F%E5%A0%A4%E6%98%A5%E6%99%93.jpg"
+                         alt="苏堤春晓">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">01</div>
+                    <div class="card-name">苏堤春晓</div>
+                    <div class="card-en">Spring Dawn at Su Causeway</div>
+                </div>
+            </a>
+            
+            <a href="./scene_quyuan.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E6%9B%B2%E9%99%A2%E9%A3%8E%E8%8D%B7.jpg"
+                         alt="曲院风荷">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">02</div>
+                    <div class="card-name">曲院风荷</div>
+                    <div class="card-en">Lotus in the Breeze at Crooked Courtyard</div>
+                </div>
+            </a>
+            
+            <a href="./scene_pinghu.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E5%B9%B3%E6%B9%96%E7%A7%8B%E6%9C%88.jpg"
+                         alt="平湖秋月">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">03</div>
+                    <div class="card-name">平湖秋月</div>
+                    <div class="card-en">Autumn Moon over the Calm Lake</div>
+                </div>
+            </a>
+            
+            <a href="./scene_duanqiao.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E6%96%AD%E6%A1%A5%E6%AE%8B%E9%9B%AA.jpg"
+                         alt="断桥残雪">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">04</div>
+                    <div class="card-name">断桥残雪</div>
+                    <div class="card-en">Lingering Snow on Broken Bridge</div>
+                </div>
+            </a>
+            
+            <a href="./scene_liulang.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E6%9F%B3%E6%B5%AA%E9%97%BB%E8%8E%BA.jpg"
+                         alt="柳浪闻莺">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">05</div>
+                    <div class="card-name">柳浪闻莺</div>
+                    <div class="card-en">Orioles Singing in the Willows</div>
+                </div>
+            </a>
+            
+            <a href="./scene_huagang.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E8%8A%B1%E6%B8%AF%E8%A7%82%E9%B1%BC.jpg"
+                         alt="花港观鱼">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">06</div>
+                    <div class="card-name">花港观鱼</div>
+                    <div class="card-en">Viewing Fish at Flower Pond</div>
+                </div>
+            </a>
+            
+            <a href="./scene_leifeng.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E9%9B%B7%E5%B3%B0%E5%A4%95%E7%85%A7.jpg"
+                         alt="雷峰夕照">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">07</div>
+                    <div class="card-name">雷峰夕照</div>
+                    <div class="card-en">Leifeng Pagoda in Evening Glow</div>
+                </div>
+            </a>
+            
+            <a href="./scene_shuangfeng.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E5%8F%8C%E5%B3%B0%E6%8F%92%E4%BA%91.jpg"
+                         alt="双峰插云">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">08</div>
+                    <div class="card-name">双峰插云</div>
+                    <div class="card-en">Twin Peaks Piercing the Clouds</div>
+                </div>
+            </a>
+            
+            <a href="./scene_nanping.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E5%8D%97%E5%B1%8F%E6%99%9A%E9%92%9F.jpg"
+                         alt="南屏晚钟">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">09</div>
+                    <div class="card-name">南屏晚钟</div>
+                    <div class="card-en">Evening Bell Ringing at Nanping Hill</div>
+                </div>
+            </a>
+            
+            <a href="./scene_santan.html" class="scene-card">
+                <div class="card-thumb">
+                    <img src="./static/images/%E4%B8%89%E6%BD%AD%E5%8D%B0%E6%9C%88.jpg"
+                         alt="三潭印月">
+                </div>
+                <div class="card-info">
+                    <div class="card-num">10</div>
+                    <div class="card-name">三潭印月</div>
+                    <div class="card-en">Three Pools Mirroring the Moon</div>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>课堂教学 · 古诗词与人文景观互动学习平台</p>
+    </footer>
+
+    <script src="./static/js/main.js"></script>
+</body>
+</html>
